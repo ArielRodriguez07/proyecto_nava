@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block cuerpo %}
+<iiv class="row">
+
+<div class="col-md-4 offset-md-4">
+<!-- La targeta card -->
+<div class="card"> <!-- targeta -->
+    <div class="card-body">
+        <form action="/editarVideojuegos/" method="POST"> {% csrf_token %} <!--- formulario -->
+            
+            <div class="form-group">
+                <input type="number" id="numid_videojuego" name="numid_videojuego" class="form-control"
+                value="{{misVideojuegos.id_videojuego}}" required>
+            </div>
+
+            <div class="form-group py-2">
+                <input type="text" id="txttitulo" name="txttitulo" class="form-control" 
+                value="{{misVideojuegos.titulo}}"  required>     
+            </div>
+
+            <div class="form-group py-2">
+                <input type="text" id="txtgenero" name="txtgenero" class="form-control"
+                value="{{misVideojuegos.genero}}"  required>
+            </div>
+
+            <div class="form-group py-2">
+                <input type="text" id="txtplataforma" name="txtplataforma" class="form-control"
+                value="{{misVideojuegos.plataforma}}" required>
+            </div>
+
+            <div class="form-group py-2">
+                <input type="number" id="numprecio" name="numprecio" class="form-control"
+                value="{{misVideojuegos.precio}}" required>
+            </div>
+
+            <div class="form-group py-2">
+                <input type="number" id="numstock" name="numstock" class="form-control"
+                value="{{misVideojuegos.stock}}" placeholder="Stock de los productos"  required>
+            </div>
+
+            <div class="form-group py-2">
+                <input type="date" id="datfecha_lanzamiento" name="datfecha_lanzamiento" class="form-control"
+                value="{{misVideojuegos.fecha_lanzamiento}}" placeholder="Rfc del proveedor" required>
+            </div>
+            <div class="form-group py-1">
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>
+        </form><!--- formulario -->
+    </div>
+</div> <!-- targeta -->
+
+
+<!-- La targeta card -->
+
+</div><!-- columna -->
+
+</div><!-- La fila -->
+
+{% endblock %}
